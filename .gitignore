@@ -1,6 +1,8 @@
 my_recipe_app_env
 .env
 recipe_platform/db.sqlite3
-/__pycache__/
+recipe_platform/__pycache__/
 .pyc
 db.sqlite
+media
+__pycache__

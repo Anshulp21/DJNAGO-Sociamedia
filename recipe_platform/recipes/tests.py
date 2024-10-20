@@ -13,3 +13,14 @@ class RecipeModelTest(TestCase):
     def test_recipe_creation(self):
         self.assertEqual(self.recipe.name, 'Test Recipe')
         self.assertEqual(self.recipe.seller.username, 'testuser')
+
+
+# python manage.py shell
+
+# from django.core.mail import send_mail
+#  send_mail('Test Email', 'This is a test', 'anshulpurohit96@gmail.com', ['anshulp490@gmail.com'], fail_silently=False)
+
+
+
+# from django_celery_beat.models import PeriodicTask
+# >>> PeriodicTask.objects.filter(name='Export users to CSV').delete()

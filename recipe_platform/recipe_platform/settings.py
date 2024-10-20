@@ -218,8 +218,8 @@ REST_FRAMEWORK = {
 
 CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'  # Ensure this is correct
 CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/0'
-CELERYD_CONCURRENCY = 1
-CELERYD_POOL = "solo"
+# CELERYD_CONCURRENCY = 1
+# CELERYD_POOL = "solo"
 
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
@@ -258,6 +258,20 @@ LOGGING = {
     },
 }
 
+# settings.py
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = 'anshulpurohit96@gmail.com'  # Sender's email
+EMAIL_HOST_PASSWORD = ''  # App-specific password, NOT the regular Gmail password
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -310,11 +324,15 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+CELERY_TIMEZONE = 'Asia/Kolkata'  # Set Celery's time zone to IST
+CELERY_ENABLE_UTC = False  # Disable UTC to use the local time zone
 
 LANGUAGE_CODE = "en-us"
-TIME_ZONE = "UTC"
+# TIME_ZONE = "UTC"
+# TIME_ZONE = 'Asia/Kolkata'  # Set time zone to IST (Indian Standard Time)
+# USE_TZ = True
 USE_I18N = True
-USE_TZ = True
+# USE_TZ = True
 
 STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

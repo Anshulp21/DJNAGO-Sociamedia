@@ -18,9 +18,18 @@ This project is a social media platform for sharing and rating recipes.
    pip install -r requirements.txt
 
 
-
-elery -A recipe_platform worker --pool=solo --loglevel=info
+redis cli
+celery -A recipe_platform worker --pool=solo --loglevel=info
 python manage.py runserver        
 celery -A recipe_platform worker --loglevel=debug
 celery -A recipe_platform worker --loglevel=info 
 celery -A recipe_platform beat --loglevel=info  
+celery -A recipe_platform worker --loglevel=info --concurrency=1
+
+
+
+http://127.0.0.1:8000/api/token/
+
+http://127.0.0.1:8000/api/recipes/
+
+http://127.0.0.1:8000/api/rate/
