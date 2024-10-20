@@ -1,0 +1,8 @@
+django
+djangorestframework
+djangorestframework-simplejwt 
+celery
+django-celery-beat 
+pillow 
+boto3
+pandas
